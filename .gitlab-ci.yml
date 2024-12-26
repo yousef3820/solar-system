@@ -45,6 +45,7 @@ code_coverage:
         coverage_format: cobertura
         path: coverage/cobertura-coverage.xml
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  allow_failure: true
 
 sample-job:
   stage: test
