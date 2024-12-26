@@ -1,23 +1,23 @@
 workflow:
   name: Solar System NodeJS Pipeline
   rules:
-    - if: $CI_COMMIT_BRANCH == 'main' || $CI_COMMIT_BRANCH =~ /^feature/
+    - if $CI_COMMIT_BRANCH == 'main' || $CI_COMMIT_BRANCH =~ /^feature/
       when: always
-    - if: $CI_MERGE_REQUEST_BRANCH_NAME=~  /^feature/ && $CI_PIPELINE_SOURCE == 'merge_requets_event'
+    - if $CI_MERGE_REQUEST_BRANCH_NAME=~  /^feature/ && $CI_PIPELINE_SOURCE == 'merge_requets_event'
       when: always
 
 stages:
   - test
 
 variables:
-  MONGO_URI: htttp://mongodb
+  MONGO_URI: 'mongodb+srv://supercluster.d83jj.mongodb.net/superData'
   MONGO_USERNAME: superuser 
   MONGO_PASSWORD: $M_DB_PASSWORD 
-  
+
 unit_testing:
   stage: test 
   image: node:17-alpine3.14
   before_script:
     - npm install 
   script:
-    - echo "npm test" 
+    - npm test
