@@ -1,9 +1,9 @@
 workflow:
   name: Solar System NodeJS Pipeline
   rules:
-    - if $CI_COMMIT_BRANCH == 'main' || $CI_COMMIT_BRANCH =~ /^feature/
+    - if: $CI_COMMIT_BRANCH == 'main' || $CI_COMMIT_BRANCH =~ /^feature/
       when: always
-    - if $CI_MERGE_REQUEST_BRANCH_NAME=~  /^feature/ && $CI_PIPELINE_SOURCE == 'merge_requets_event'
+    - if: $CI_MERGE_REQUEST_BRANCH_NAME=~  /^feature/ && $CI_PIPELINE_SOURCE == 'merge_requets_event'
       when: always
 
 stages:
