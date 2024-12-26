@@ -21,7 +21,6 @@ unit_testing:
     - npm install 
   script:
     - npm test
-    - ls -l 
   artifacts:
     when: always
     expire_in: 3 days
@@ -30,3 +29,18 @@ unit_testing:
       - test-results.xml 
     reports:
       junit: test-results.xml 
+
+code_coverage:
+  stage: test 
+  image: node:17-alpine3.14
+  before_script:
+    - npm install 
+  script:
+    - npm run coverage
+  artifacts:
+    name: code-coverage-result 
+    when: always
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
