@@ -12,7 +12,7 @@ stages:
 variables:
   MONGO_URI: 'mongodb+srv://supercluster.d83jj.mongodb.net/superData'
   MONGO_USERNAME: superuser 
-  MONGO_PASSWORD: $M_DB_PASSWORD 
+  MONGO_PASSWORD: SuperPassword
 
 unit_testing:
   stage: test 
