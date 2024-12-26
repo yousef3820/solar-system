@@ -26,6 +26,6 @@ unit_testing:
     expire_in: 3 days
     name: Moca-Test-Result
     paths:
-      - test-result.xml 
+      - test-results.xml 
     reports:
-      junit: test-result.xml 
+      junit: test-results.xml 
