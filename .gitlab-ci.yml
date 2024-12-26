@@ -44,3 +44,12 @@ code_coverage:
       coverage_report:
         coverage_format: cobertura
         path: coverage/cobertura-coverage.xml
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+
+sample-job:
+  stage: test
+  needs: 
+    - code_coverage
+  image: node:17-alpine3.14
+  script:
+    - echo "testing sample job"
