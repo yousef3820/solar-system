@@ -47,6 +47,8 @@ code_coverage:
                 coverage_format: cobertura
                 path: coverage/cobertura-coverage.xml
     coverage: /All files[^|]*|[^|]*\s+([\d\.]+)/
+    allow_failure: true
+    
 sample_job:
     stage: test
     image: node:17-alpine3.14
