@@ -21,3 +21,13 @@ unit_testing:
         - npm install
     script:
         - npm test
+    artifacts:
+        when: always
+        access: all
+        expire_in: 3 days
+        name: Mocha-Test-Result
+        paths:
+            - test-results.xml
+        reports:
+            junit: test-results.xml
+
