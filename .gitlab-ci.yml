@@ -49,12 +49,6 @@ code_coverage:
     coverage: /All files[^|]*|[^|]*\s+([\d\.]+)/
     allow_failure: true
     
-sample_job:
-    stage: test
-    image: node:17-alpine3.14
-    needs:
-        - code_coverage
-    script:
-        - echo testing smaple job
+
     
 
